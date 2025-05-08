@@ -5,7 +5,7 @@ interface LoginButtonProps {
 export default function LoginButton({ size }: LoginButtonProps) {
   return (
     <button className={`btn btn-secondary btn-${size}`}>
-      Create your first ticket
+      Create your first bounty
     </button>
   );
 }
