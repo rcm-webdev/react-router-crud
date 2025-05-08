@@ -1,6 +1,16 @@
 import { Form, redirect, type ActionFunctionArgs } from "react-router";
 import { supabase } from "~/supabase-client";
 
+export function meta() {
+  return [
+    { title: "New Ticket | TaskPilot" },
+    {
+      name: "description",
+      content: "Create a new ticket using our Supabase CRUD app",
+    },
+  ];
+}
+
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const title = formData.get("title") as string;
