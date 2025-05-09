@@ -17,7 +17,7 @@ export default function Navbar() {
             ></path>
           </svg>
 
-          <span className="">TaskPilot</span>
+          <span className="">Task Bounties</span>
         </NavLink>
         <NavLink to={"/new"}>
           <LoginButton size={"sm"} />
