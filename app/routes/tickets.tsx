@@ -22,23 +22,24 @@ export default function Tickets({ loaderData }: Route.ComponentProps) {
       {error && <div>{error}</div>}
       <ul className="grid grid-cols-3 gap-4 max-h-[500px] overflow-y-auto">
         {tickets?.map((ticket) => (
-          <li
+          <Link
             key={ticket.id}
+            to={`/tickets/${ticket.id}`}
             className="font-bold bg-base-200 p-6 rounded-3xl hover:bg-neutral hover:text-neutral-content duration-200"
           >
-            <Link to={"/"} className="flex flex-col">
+            <li className="flex flex-col">
               <span className="text-warning text-xs">Id: {ticket.id}</span>
               <span>{ticket.title}</span>
               <p>{ticket.description}</p>
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
 
       <div className="divider"></div>
 
       <h2 className="text-center text-4xl ">
-        List of <span className="text-error font-bold">closed</span> bounties
+        List of <span className="text-error font-bold">claimed</span> bounties
       </h2>
       {error && <div>{error}</div>}
       <ul className="grid grid-cols-3 gap-4 max-h-[500px] overflow-y-auto">
@@ -47,10 +48,10 @@ export default function Tickets({ loaderData }: Route.ComponentProps) {
             key={ticket.id}
             className="font-bold bg-base-200 p-6 rounded-3xl hover:bg-neutral hover:text-neutral-content duration-200"
           >
-            <Link to={"/"} className="flex flex-col">
+            <Link to={`/tickets/${ticket.id}`} className="flex flex-col">
               <span className="text-warning text-xs">Id: {ticket.id}</span>
-              <span>{ticket.title}</span>
-              <p>{ticket.description}</p>
+              <span className="font-bold">{ticket.title}</span>
+              <p className="font-light">{ticket.description}</p>
             </Link>
           </li>
         ))}

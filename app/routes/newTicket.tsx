@@ -40,7 +40,7 @@ export default function NewTicket() {
   return (
     <div className="max-w-xl mx-auto flex items-center justify-center min-h-screen">
       <div className="w-full bg-base-200 p-8 rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold mb-6">Create New Ticket</h2>
+        <h2 className="text-2xl font-bold mb-6">Create New Ticket Bounty</h2>
         <Form method="post" className="space-y-4 ">
           <div className="flex flex-col">
             <label className="label">
