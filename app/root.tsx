@@ -10,6 +10,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import Navbar from "./components/Navbar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -46,25 +47,7 @@ export default function App() {
   return (
     <>
       <nav>
-        <NavLink to="/">TaskPilot</NavLink>
-        <div className="flex flex-col">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-neutral-800"
-            }
-          >
-            Tickets
-          </NavLink>
-          <NavLink
-            to="/new"
-            className={({ isActive }) =>
-              isActive ? "text-blue-500" : "text-neutral-800"
-            }
-          >
-            New Ticket
-          </NavLink>
-        </div>
+        <Navbar />
       </nav>
       <main>
         <Outlet />

@@ -28,20 +28,39 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function NewTicket() {
   return (
-    <div>
-      <h2>Create New Ticket</h2>
-      <Form method="post">
-        <div>
-          <label>Title</label>
-          <input type="text" name="title" required />
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea name="description" required />
-        </div>
+    <div className="max-w-xl mx-auto flex items-center justify-center min-h-screen">
+      <div className="w-full bg-base-200 p-8 rounded-2xl shadow-lg">
+        <h2 className="text-2xl font-bold mb-6">Create New Ticket</h2>
+        <Form method="post" className="space-y-4 ">
+          <div className="flex flex-col">
+            <label className="label">
+              <span className="label-text">Title</span>
+            </label>
+            <input
+              type="text"
+              name="title"
+              className="input input-bordered"
+              placeholder="Enter issue subject"
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="label">
+              <span className="label-text">Description</span>
+            </label>
+            <textarea
+              name="description"
+              className="textarea textarea-bordered"
+              placeholder="Describe the issue"
+              required
+            />
+          </div>
 
-        <button type="submit">Create Ticket</button>
-      </Form>
+          <button type="submit" className="mt-6 btn btn-secondary">
+            Create Ticket
+          </button>
+        </Form>
+      </div>
     </div>
   );
 }
